@@ -40,7 +40,10 @@ int main() {
     } else if (playerHealth > 50 || playerHealth > 0) {
         if(enemyHealth > 100) {
             cout << "Your opponent has too much health! \n";
-        } else if (enemyHealth > 50 || enemyHealth > 0) {
+        } else if( playerHealth == enemyHealth) {
+            cout << "It's a draw! \n";
+        }
+        else if (enemyHealth > 50 || enemyHealth > 0) {
             cout << "You have " << playerHealth << " health! \n" <<
             "Your opponent has " << enemyHealth << " health! \n";
         } else {
