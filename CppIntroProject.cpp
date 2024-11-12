@@ -11,6 +11,7 @@ int main() {
     "But we can do it! \n";
 
     int playerHealth = 100;
+    int enemyHealth = 100;
     int playerLives = 3;
     string playerID = "1ABC23";
     float winRate = 0.8;
@@ -30,15 +31,25 @@ int main() {
         cout << "You are a player! \n";
     }
 
-    cout << "You have " << playerLives << " lives! \n";
-    cout << "Your ID is " << playerID << " \n";
-    cout << "Your win rate is " << winRate << " \n";
-    cout << "Did you win? \n";
-    cin >> playerWon;
-    if(playerWon == true) {
-        cout << "You won! \n";
+    cout << "How much health do you have? \n";
+    cin >> playerHealth;
+    cout << "How much health does your opponent have? \n";
+    cin >> enemyHealth;
+    if(playerHealth > 100) {
+        cout << "You have too much health! \n";
+    } else if (playerHealth > 50 || playerHealth > 0) {
+        if(enemyHealth > 100) {
+            cout << "Your opponent has too much health! \n";
+        } else if (enemyHealth > 50 || enemyHealth > 0) {
+            cout << "You have " << playerHealth << " health! \n" <<
+            "Your opponent has " << enemyHealth << " health! \n";
+        } else {
+            cout << "You won! \n";
+            playerWon = true;
+        }
     } else {
         cout << "You lost! \n";
+        playerWon = false;
     }
 
     return 0;
