@@ -18,6 +18,13 @@ int main() {
     bool playerWon = false;
     char playerType = 'A';
 
+    int playerDamae = 20;
+    int enemyDamage = 20;
+
+    bool isPlayerInRange = false;
+    bool isPlayerAttacking = false;
+    bool isPlayerDefending = false;
+
     cout <<"How much health do you have? \n";
     cin >> playerHealth;
     cout << "You have " << playerHealth << " health! \n" <<
@@ -31,28 +38,28 @@ int main() {
         cout << "You are a player! \n";
     }
 
-    cout << "How much health do you have? \n";
-    cin >> playerHealth;
-    cout << "How much health does your opponent have? \n";
-    cin >> enemyHealth;
-    if(playerHealth > 100) {
-        cout << "You have too much health! \n";
-    } else if (playerHealth > 50 || playerHealth > 0) {
-        if(enemyHealth > 100) {
-            cout << "Your opponent has too much health! \n";
-        } else if( playerHealth == enemyHealth) {
-            cout << "It's a draw! \n";
-        }
-        else if (enemyHealth > 50 || enemyHealth > 0) {
-            cout << "You have " << playerHealth << " health! \n" <<
-            "Your opponent has " << enemyHealth << " health! \n";
+    cout << "Your enemy is attacking! \n" <<
+    "Are you in range? \n";
+    cin >> isPlayerInRange;
+    cout << "Are you going to attack? \n" <<
+    "Say true or false \n";
+    cin >> isPlayerAttacking;
+    if(!isPlayerAttacking) {
+        cout << "Are you going to defend? \n" <<
+        "Say true or false \n";
+        cin >> isPlayerDefending;
+    }
+
+    if (isPlayerInRange) {
+        if (isPlayerAttacking && playerHealth <= 20) {
+            cout << "Player should deliver a rage attack. \n";
+        } else if (isPlayerDefending) {
+            cout << "Enemy should hold. \n";
+        } else if (!isPlayerDefending && (playerHealth == 100 || playerHealth < 10)) {
+            cout << "Enemy should do a special ability attack. \n";
         } else {
-            cout << "You won! \n";
-            playerWon = true;
+            cout << "The enemy should attack! \n";
         }
-    } else {
-        cout << "You lost! \n";
-        playerWon = false;
     }
 
     return 0;
