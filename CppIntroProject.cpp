@@ -7,29 +7,18 @@ int attack = 20;
 int defense = 10;
 int healing = 15;
 
-int TakeDamage(int damageToInflict) {
-    playerHealth -= damageToInflict;
-    if(playerHealth <= 0) {
-        playerHealth = 0;
-        cout << "You are dead! \n";
-    }
-    cout << "You took " << damageToInflict << " damage! \n";
-    cout << "Your health is now " << playerHealth << " points! \n";
-    return playerHealth;
+void shooting() {
+    cout << "You shot the enemy! \n";
 }
 
-int Heal(int amountToHeal) {
-    playerHealth += amountToHeal;
-    cout << "You healed " << amountToHeal << " health! \n" <<
-    "Your health is now " << playerHealth << " points! \n";
-    return playerHealth;
+void healing() {
+    cout << "You healed yourself! \n";
 }
 
-int DamageMultiplier(float multiplier) {
-    attack *= multiplier;
-    cout << "Your attack is now " << attack << " points! \n";
-    return attack;
+void attacking() {
+    cout << "You attacked the enemy! \n";
 }
+
 int main() {
     //used repl.it too much in college so I have to make github repos
     cout << "Hello, World! I'm a C++ program! \n" << 
@@ -48,9 +37,20 @@ int main() {
 
     int enemyDamage = 20;
 
-    playerHealth = TakeDamage(enemyDamage);
-    playerHealth = Heal(healing);
-    attack = DamageMultiplier(1.5);
+    playerHealth -= enemyDamage;
+    for(int i = 0; i < 10; i++) {
+        shooting();
+    }
+    int i = 0;
+    while(i < 5) {
+        healing();
+        i++;
+    }
+    i = 0;
+    do {
+        attacking();
+        i++;
+    } while(i < 7);
 
     return 0;
 }
