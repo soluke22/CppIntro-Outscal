@@ -19,6 +19,14 @@ void attacking() {
     cout << "You attacked the enemy! \n";
 }
 
+int mathProblem(int n) {
+    int answer = 0;
+    for(int i = 0; i < n; i++) {
+        answer += i;
+    }
+    return answer;
+}
+
 int main() {
     //used repl.it too much in college so I have to make github repos
     cout << "Hello, World! I'm a C++ program! \n" << 
@@ -51,6 +59,14 @@ int main() {
         attacking();
         i++;
     } while(i < 7);
+
+    cout << "Let's do a math trick! \n" <<
+    "Give me a number: \n";
+    int n;
+    cin >> n;
+    cout << "Now, watch this! \n";
+    mathProblem(n);
+    cout << "The answer is: " << mathProblem(n) << "\n";
 
     return 0;
 }
