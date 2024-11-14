@@ -18,7 +18,7 @@ class Player{
         int health;
         int attackPower;
 
-        Player::Player(){
+        Player::Player(int health, int attackPower){
             health = 100;
             attackPower = 10;
         }
@@ -32,7 +32,7 @@ int main() {
     //used repl.it too much in college so I have to make github repos
 
     gameStory();
-    Player player = Player();
+    Player player = Player(10, 20);
 
     return 0;
 }
