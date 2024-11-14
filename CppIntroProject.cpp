@@ -30,6 +30,16 @@ class Player{
         void Attack(){
             cout << "Attack!" << endl;
         }
+
+        void takeDamage(int damageTaken) {
+            health -= damageTaken;
+            showHealth();
+        }
+
+        void Heal(){
+            health += 10;
+            showHealth();
+        }
     private:
         void showHealth(){
             cout << "Health: " << health << endl;
