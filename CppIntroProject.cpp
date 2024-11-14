@@ -17,22 +17,36 @@ class Player{
     public:
         int health;
         int attackPower;
+        string name;
 
-        Player::Player(int health, int attackPower){
-            health = 100;
-            attackPower = 10;
+        Player::Player(string name, int health, int attackPower){
+            cout << "Initializing Player" << endl << name << "Is created!" << endl;
         }
 
         Player::~Player(){
             cout << "Destructor called" << endl;
         }
+
+        void Attack(){
+            cout << "Attack!" << endl;
+        }
+    private:
+        void showHealth(){
+            cout << "Health: " << health << endl;
+        }
+
+        void showAttackPower(){
+            cout << "Attack Power: " << attackPower << endl;
+        }
+
+        
 };
 
 int main() {
     //used repl.it too much in college so I have to make github repos
 
     gameStory();
-    Player player = Player(10, 20);
+    Player player = Player("Ultimate Unit", 10, 20);
 
     return 0;
 }
