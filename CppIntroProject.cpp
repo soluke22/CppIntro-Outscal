@@ -2,37 +2,37 @@
 
 using namespace std;
 
-int mathProblem(int n) {
-    int answer = 0;
-    for(int i = 0; i < n; i++) {
-        answer += i;
-    }
-    return answer;
-}
 
-int main() {
-    //used repl.it too much in college so I have to make github repos
+
+void gameStory(){
     cout << "Hello, World! I'm a C++ program! \n" << 
     "I'm here to show you how the world works... \n" << 
     "Maybe by punishment? Or by help! \n" << 
     "Don't worry, we'll find out together! \n" <<
     "Just know, that C++ isn't easy! So our challenges won't be easy either! \n" <<
     "But we can do it! \n";
+}
 
-    int enemyHealth = 100;
-    int playerLives = 3;
-    string playerID = "1ABC23";
-    float winRate = 0.8;
-    bool playerWon = false;
-    char playerType = 'A';
+class Player{
+    public:
+        int health;
+        int attackPower;
 
-    cout << "Let's do a math trick! \n" <<
-    "Give me a number: \n";
-    int n;
-    cin >> n;
-    cout << "Now, watch this! \n";
-    mathProblem(n);
-    cout << "The answer is: " << mathProblem(n) << "\n";
+        Player::Player(){
+            health = 100;
+            attackPower = 10;
+        }
+
+        Player::~Player(){
+            cout << "Destructor called" << endl;
+        }
+};
+
+int main() {
+    //used repl.it too much in college so I have to make github repos
+
+    gameStory();
+    Player player = Player();
 
     return 0;
 }
