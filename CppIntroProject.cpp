@@ -2,23 +2,6 @@
 
 using namespace std;
 
-int playerHealth = 100;
-int attack = 20;
-int defense = 10;
-int healing = 15;
-
-void shooting() {
-    cout << "You shot the enemy! \n";
-}
-
-void healing() {
-    cout << "You healed yourself! \n";
-}
-
-void attacking() {
-    cout << "You attacked the enemy! \n";
-}
-
 int mathProblem(int n) {
     int answer = 0;
     for(int i = 0; i < n; i++) {
@@ -42,23 +25,6 @@ int main() {
     float winRate = 0.8;
     bool playerWon = false;
     char playerType = 'A';
-
-    int enemyDamage = 20;
-
-    playerHealth -= enemyDamage;
-    for(int i = 0; i < 10; i++) {
-        shooting();
-    }
-    int i = 0;
-    while(i < 5) {
-        healing();
-        i++;
-    }
-    i = 0;
-    do {
-        attacking();
-        i++;
-    } while(i < 7);
 
     cout << "Let's do a math trick! \n" <<
     "Give me a number: \n";
